@@ -1,5 +1,5 @@
 import { Outlet, createFileRoute } from '@tanstack/react-router'
-import { Header, SideNav } from '@/components'
+import { Header, Messages, SideNav } from '@/components'
 
 export const Route = createFileRoute('/app')({
   component: AppLayoutComponent,
@@ -7,12 +7,19 @@ export const Route = createFileRoute('/app')({
 
 function AppLayoutComponent() {
   return (
-    <div className="w-full h-full max-h-svh flex flex-col font-display">
+    <div className="w-full h-full max-h-svh flex flex-col font-display relative">
       <Header />
-      <div className="bg-[#F9F9F9] w-full h-full max-h-svh px-16 pt-6">
-        <div className="flex items-start gap-x-6 w-full h-full max-w-[1440px] mx-auto">
+      <div
+        // style={{ maxHeight: 'calc(100vh - 90px)' }}
+        className="bg-[#F9F9F9] w-full h-full  px-16 pt-6"
+      >
+        <div
+          style={{ maxHeight: 'calc(100vh - 90px)' }}
+          className="flex items-start gap-x-6 w-full h-full  overflow-clip max-w-[1440px] mx-auto"
+        >
           <SideNav />
           <Outlet />
+          <Messages />
         </div>
       </div>
     </div>

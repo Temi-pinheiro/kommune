@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <header className="bg-white max-h-[64px]">
-      <div className="max-w-[1440px] mx-auto py-5 flex items-center px-16">
+      <div className="max-w-[1440px] mx-auto py-5 flex items-center max-2xl:px-16">
         <Logo />
       </div>
     </header>

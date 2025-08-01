@@ -15,5 +15,20 @@ code {
 }
 
 @theme {
-  --font-display: 'Nunito Sans', sans-serif;
+  --font-display: 'Nunito', sans-serif;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+.remove-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.kebab-button {
+  @apply border-b py-3 px-5 text-left text-[#1D1D1D] font-semibold disabled:text-[#bdbdbd] disabled:cursor-not-allowed;
+}
+
+.page {
+  @apply bg-white rounded-2xl p-6 min-lg:min-w-[500px] max-w-[46%] w-full h-full overflow-y-scroll gap-y-6 flex flex-col;
 }

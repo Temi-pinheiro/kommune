@@ -39,27 +39,27 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary
-    ? ' bg-[#ADEC76] text-[#090C06] hover:ring-1 duration-200 transition ring-offset-1 ring-[#ADEC76]'
+    ? ' bg-[#ADEC76] text-[#090C06] hover:ring-1 duration-500 transition ring-offset-1 ring-[#ADEC76]'
     : danger
-      ? 'bg-white text-[#D00000] hover:bg-[#D00000] hover:text-white hover:shadow-none duration-200 transition  shadow-md border border-[#EBECF0]'
+      ? 'bg-white text-[#D00000] hover:bg-[#D00000] hover:text-white hover:shadow-none duration-500 transition  shadow-md border border-[#EBECF0]'
       : red
-        ? 'bg-white text-white bg-[#D00000] hover:ring-1 duration-200 transition ring-offset-1 ring-[#d00000] shadow-md border border-[#EBECF0]'
+        ? 'bg-white text-white bg-[#D00000] hover:ring-1 duration-500 transition ring-offset-1 ring-[#d00000] shadow-md border border-[#EBECF0]'
         : mono
-          ? 'bg-white text-black hover:ring-1 duration-200 transition ring-offset-1 ring-[#EBECF0] shadow-md border border-[#EBECF0]'
+          ? 'text-[#090C06] bg-transaparent hover:ring-1 border border-black duration-500 transition disabled:bg-transparent disabled:text-[#9f9f9f] disabled:border-[#9f9f9f] disabled:hover:pointer-events-none disabled:hover:ring-0'
           : approve
-            ? 'bg-green-600 text-white duration-200 transition ring-offset-1 ring-green-600 hover:ring-1'
+            ? 'bg-green-600 text-white duration-500 transition ring-offset-1 ring-green-600 hover:ring-1'
             : reject
-              ? 'bg-orange-600 text-white border border-transparent hover:ring-1 duration-200 transition ring-offset-1 ring-orange-600'
-              : ' bg-[#ADEC76] text-white hover:ring-1 duration-200 transition ring-offset-1 ring-[#ADEC76]'
+              ? 'bg-orange-600 text-white border border-transparent hover:ring-1 duration-500 transition ring-offset-1 ring-orange-600'
+              : ' bg-[#ADEC76] text-white hover:ring-1 duration-500 transition ring-offset-1 ring-[#ADEC76]'
 
   return (
     <button
       type={type}
       className={[
-        'btn  ',
+        'btn  cursor-pointer',
         `${mode}`,
         `${size}`,
-        ` rounded-[12px]`,
+        ` rounded-3xl`,
         icon ? 'flex items-center gap-x-3' : '',
       ].join(' ')}
       disabled={disabled || loading}
