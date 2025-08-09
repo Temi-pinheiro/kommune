@@ -13,7 +13,7 @@ export const Messages = () => {
         height: !isOpen ? 'auto' : '96%',
         borderRadius: !isOpen ? '64px' : '24px',
       }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
       className=" bg-white text-[#1D1D1D] w-full max-w-[30%] rounded-full self-end mb-6 flex flex-col relative"
     >
       <Group key="title">
