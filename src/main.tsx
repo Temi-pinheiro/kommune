@@ -37,7 +37,6 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <ToastNotifications />
-
       <TanStackQueryProvider.Provider>
         <RouterProvider router={router} />
       </TanStackQueryProvider.Provider>

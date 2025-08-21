@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoTanstackQueryRouteImport } from './routes/demo.tanstack-query'
 import { Route as AppShopIndexRouteImport } from './routes/app/shop/index'
 import { Route as AppJobsIndexRouteImport } from './routes/app/jobs/index'
 import { Route as AppHomeIndexRouteImport } from './routes/app/home/index'
@@ -27,11 +26,6 @@ const AppRouteRoute = AppRouteRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
-  id: '/demo/tanstack-query',
-  path: '/demo/tanstack-query',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppShopIndexRoute = AppShopIndexRouteImport.update({
@@ -68,7 +62,6 @@ const AppCommunityIdRoute = AppCommunityIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
   '/app/shop/$id': typeof AppShopIdRoute
   '/app/community': typeof AppCommunityIndexRoute
@@ -79,7 +72,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
   '/app/shop/$id': typeof AppShopIdRoute
   '/app/community': typeof AppCommunityIndexRoute
@@ -91,7 +83,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
   '/app/shop/$id': typeof AppShopIdRoute
   '/app/community/': typeof AppCommunityIndexRoute
@@ -104,7 +95,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/app'
-    | '/demo/tanstack-query'
     | '/app/community/$id'
     | '/app/shop/$id'
     | '/app/community'
@@ -115,7 +105,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/app'
-    | '/demo/tanstack-query'
     | '/app/community/$id'
     | '/app/shop/$id'
     | '/app/community'
@@ -126,7 +115,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/app'
-    | '/demo/tanstack-query'
     | '/app/community/$id'
     | '/app/shop/$id'
     | '/app/community/'
@@ -138,7 +126,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRouteRoute: typeof AppRouteRouteWithChildren
-  DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -155,13 +142,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/tanstack-query': {
-      id: '/demo/tanstack-query'
-      path: '/demo/tanstack-query'
-      fullPath: '/demo/tanstack-query'
-      preLoaderRoute: typeof DemoTanstackQueryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/shop/': {
@@ -234,7 +214,6 @@ const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRouteRoute: AppRouteRouteWithChildren,
-  DemoTanstackQueryRoute: DemoTanstackQueryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
