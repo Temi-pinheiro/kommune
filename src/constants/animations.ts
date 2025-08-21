@@ -37,7 +37,7 @@ export const toggleHide = {
   animate: (custom?: number) => ({
     display: 'block',
     opacity: 1,
-    transition: { opacity: { delay: custom ? custom : 0.2 } },
+    transition: { opacity: { delay: custom ?? 0.2 } },
   }),
 }
 export const dropdown = {
@@ -60,9 +60,9 @@ export const dropdown = {
     y: 0,
     scale: 1,
     transition: {
-      opacity: { delay: custom ? custom : 0.2 },
-      y: { delay: custom ? custom : 0.2 },
-      scale: { delay: custom ? custom : 0.2 },
+      opacity: { delay: custom ?? 0.2 },
+      y: { delay: custom ?? 0.2 },
+      scale: { delay: custom ?? 0.2 },
     },
   }),
 }

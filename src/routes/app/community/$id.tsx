@@ -1,4 +1,5 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { motion } from 'motion/react'
 import { Posts } from './-panes/Posts'
 import { Jobs } from './-panes/Jobs'
 import { returnCompactNumber } from '@/utils/numberFormatter'
@@ -57,18 +58,18 @@ function CommunityPage() {
     })
   }
   return (
-    <div className="bg-white rounded-2xl min-lg:min-w-[500px] max-w-[46%] w-full h-full overflow-y-scroll gap-y-6 flex flex-col text-black">
+    <div className="bg-white min-lg:rounded-2xl min-lg:min-w-[500px] min-lg:max-w-[46%] w-full h-full overflow-y-scroll gap-y-6 flex flex-col text-black">
       <Group key="header">
-        <div className="rounded-t-2xl max-h-[286px] w-full h-full overflow-clip">
+        <motion.div className="min-lg:rounded-t-2xl h-[200px] min-lg:max-h-[286px] w-full min-lg:h-full overflow-clip shrink-0">
           <img
             alt="cover-image"
             src={kommunne.coverImage}
             className="w-full h-full object-cover outline-0"
           />
-        </div>
+        </motion.div>
       </Group>
       <Group key="community info">
-        <div className="p-6 flex flex-col gap-y-5">
+        <div className="flex p-6 flex-col gap-y-5">
           <h1 className="font-bold text-2xl min-xl:text-4xl leading-[120%]">
             {kommunne.name}
           </h1>
@@ -147,7 +148,7 @@ function CommunityPage() {
         </div>
       </Group>
       <Group key="body">
-        <div className="flex flex-col w-full">
+        <div className=" flex flex-col w-full">
           <Panes active={active} handleChange={handleSwitch} panes={panes} />
 
           {active == 'jobs' && <Jobs />}

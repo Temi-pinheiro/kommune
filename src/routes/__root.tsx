@@ -16,12 +16,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       <ModalProvider>
         <Outlet />
       </ModalProvider>
-      <TanStackRouterDevtools />
+      {/* <TanStackRouterDevtools />
 
-      <TanStackQueryLayout />
+      <TanStackQueryLayout /> */}
     </>
   ),
-  validateSearch: (search: Record<string, unknown>): { q: string } => {
+  validateSearch: (search: Record<string, unknown>): { q?: string } => {
     // validate and parse the search params into a typed state
     return {
       q: search.q as string,

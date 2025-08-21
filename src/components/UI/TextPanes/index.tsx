@@ -7,7 +7,7 @@ export interface PanesProps {
     value?: string | number
     show?: boolean
   }>
-  active: string
+  active?: string
   handleChange: (id: any) => void
 }
 

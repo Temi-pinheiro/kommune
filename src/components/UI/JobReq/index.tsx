@@ -15,7 +15,7 @@ export const JobRequest = ({ jobReq }: { jobReq: JobReq }) => {
       className="border rounded-xl border-[#F0F0F0] py-4 px-4 flex flex-col transition duration-500 ease-in-out hover:scale-[101%] text-left cursor-pointer"
     >
       <h3 className="font-medium text-black">{jobReq.title}</h3>
-      <div className="mt-3 flex items-end justify-between">
+      <div className="mt-3 flex items-end justify-between max-lg:w-full">
         <Group key="info">
           <div className="flex flex-col gap-y-2 text-sm text-[#6C726F]">
             <span className="flex items-center gap-x-2">

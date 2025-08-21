@@ -1,8 +1,39 @@
 export const Header = () => {
   return (
-    <header className="bg-white max-h-[64px]">
-      <div className="max-w-[1440px] mx-auto py-5 flex items-center max-2xl:px-16">
+    <header className="bg-white max-lg:h-[56px] min-lg:max-h-[64px] max-lg:border-b border-[#F5F5F5]">
+      <div className="max-lg:hidden max-w-[1440px] mx-auto py-5 flex items-center max-2xl:px-16">
         <Logo />
+      </div>
+      <div className="flex items-center justify-between py-2 px-6">
+        {/* avatar */}
+        <button className="rounded-full w-10 h-10 overflow-clip">
+          <img
+            src="https://images.unsplash.com/photo-1752679557481-5eb760fae573?q=80&w=3431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="avatar"
+            className="w-[32px] h-[32px] rounded-full object-cover"
+          />
+        </button>
+
+        <h1 className="text-lg font-bold text-[#444444]">Home</h1>
+
+        {/* notifications */}
+        <button className="rounded-full h-10 w-10 bg-[#F7F7F7] flex items-center justify-center">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.268 21C10.4435 21.304 10.696 21.5565 11 21.732C11.3041 21.9075 11.6489 21.9999 12 21.9999C12.3511 21.9999 12.6959 21.9075 13 21.732C13.304 21.5565 13.5565 21.304 13.732 21M3.262 15.326C3.13137 15.4692 3.04516 15.6472 3.01386 15.8385C2.98256 16.0298 3.00752 16.226 3.08571 16.4034C3.1639 16.5807 3.29194 16.7316 3.45426 16.8375C3.61658 16.9434 3.80618 16.9999 4 17H20C20.1938 17.0001 20.3834 16.9438 20.5459 16.8381C20.7083 16.7324 20.8365 16.5817 20.9149 16.4045C20.9933 16.2273 21.0185 16.0311 20.9874 15.8398C20.9564 15.6485 20.8704 15.4703 20.74 15.327C19.41 13.956 18 12.499 18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 12.499 4.589 13.956 3.262 15.326Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     </header>
   )

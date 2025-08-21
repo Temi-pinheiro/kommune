@@ -1,19 +1,19 @@
 import { Link } from '@tanstack/react-router'
 import {
+  ChatIcon,
   CommunityNavIcon,
   HomeNavIcon,
   JobNavsIcon,
   ShopNavIcon,
 } from '../icons'
-import { Button } from '@/components/Form'
 
 const linkClass =
-  'flex items-center gap-x-3 [&.active]:text-[#121212] text-[#6C726F] font-semibold transition duration-500 ease-in-out hover:text-[#121212] fill-[#A5A5A5] hover:fill-[#121212] [&.active]:fill-[#121212] stroke-[#A5A5A5] hover:stroke-[#121212] [&.active]:stroke-[#121212]'
+  'flex flex-col items-center [&.active]:text-[#121212] text-[#6C726F] font-semibold transition duration-500 ease-in-out hover:text-[#121212] fill-[#A5A5A5] hover:fill-[#121212] [&.active]:fill-[#121212] stroke-[#A5A5A5] hover:stroke-[#121212] [&.active]:stroke-[#121212] text-xs w-full'
 
-export const SideNav = () => {
+export const MobileNav = () => {
   return (
-    <div className="max-lg:hidden w-[266px] p-6 bg-white rounded-2xl h-full max-h-[90%] flex flex-col items-start gap-y-12 shrink-0">
-      <nav className="flex flex-col gap-y-8">
+    <div className="fixed bottom-0 left-0 right-0 h-[90px] bg-white min-lg:hidden">
+      <nav className="flex items-center justify-between pt-4">
         <Link className={`${linkClass}`} to="/app/home">
           <HomeNavIcon />
           Home
@@ -40,13 +40,16 @@ export const SideNav = () => {
           <ShopNavIcon />
           Shop
         </Link>
+        <Link
+          className={`${linkClass}`}
+          to="/app/shop"
+          activeOptions={{ includeSearch: false }}
+          search={{ type: 'free' }}
+        >
+          <ChatIcon />
+          Chat
+        </Link>
       </nav>
-      <Button
-        label="Create a Post"
-        size="large"
-        primary
-        {...{ style: { width: '100%' } }}
-      />
     </div>
   )
 }

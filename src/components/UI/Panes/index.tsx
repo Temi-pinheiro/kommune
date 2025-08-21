@@ -13,8 +13,6 @@ interface PanesProps {
 }
 
 export const Panes = ({ panes, active, handleChange }: PanesProps) => {
-  // todo make sure that the setactive prop is passed down as a prop
-
   return (
     <motion.div key={panes.map((pane) => pane.id).toString()}>
       <ul className="pane-conatiner">

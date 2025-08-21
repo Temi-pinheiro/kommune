@@ -5,7 +5,7 @@ import { Jobs } from './-panes/Jobs'
 import { Tasks } from './-panes/Tasks'
 import { Group, Panes, SearchBar } from '@/components'
 
-type JobsPageOptions = 'jobs' | 'tasks'
+export type JobsPageOptions = 'jobs' | 'tasks'
 export type JobStatusOptions = 'all' | 'open' | 'accepted' | 'completed'
 export type TaskStatusOptions = 'all' | 'open' | 'assigned' | 'completed'
 type StatusOptions = JobStatusOptions | TaskStatusOptions
@@ -29,7 +29,7 @@ export const Route = createFileRoute('/app/jobs/')({
 function RouteComponent() {
   const navigate = useNavigate({ from: Route.fullPath })
   const { active, q } = Route.useSearch()
-  const [search, setSearch] = useState(() => q)
+  const [search, setSearch] = useState(() => q || '')
 
   const panes = [
     {
@@ -51,7 +51,7 @@ function RouteComponent() {
   }
 
   return (
-    <div className="bg-white rounded-2xl min-lg:min-w-[500px] max-w-[46%] w-full h-full overflow-y-scroll gap-y-6 flex flex-col text-black">
+    <div className="bg-white rounded-2xl min-lg:min-w-[500px] min-lg:max-w-[46%] w-full h-full overflow-y-scroll gap-y-6 flex flex-col text-black">
       <div className="px-6">
         <SearchBar search={search} setSearch={setSearch} />
       </div>

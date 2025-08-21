@@ -1,0 +1,11 @@
+.background {
+  background: rgba(52, 64, 84, 0.7);
+  backdrop-filter: blur(8px);
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  width: calc(100% - 103px);
+  height: 100%;
+  left: 0;
+  top: 72px;
+}

@@ -16,6 +16,7 @@ import { Route as AppShopIndexRouteImport } from './routes/app/shop/index'
 import { Route as AppJobsIndexRouteImport } from './routes/app/jobs/index'
 import { Route as AppHomeIndexRouteImport } from './routes/app/home/index'
 import { Route as AppCommunityIndexRouteImport } from './routes/app/community/index'
+import { Route as AppShopIdRouteImport } from './routes/app/shop/$id'
 import { Route as AppCommunityIdRouteImport } from './routes/app/community/$id'
 
 const AppRouteRoute = AppRouteRouteImport.update({
@@ -53,6 +54,11 @@ const AppCommunityIndexRoute = AppCommunityIndexRouteImport.update({
   path: '/community/',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const AppShopIdRoute = AppShopIdRouteImport.update({
+  id: '/shop/$id',
+  path: '/shop/$id',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 const AppCommunityIdRoute = AppCommunityIdRouteImport.update({
   id: '/community/$id',
   path: '/community/$id',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/app': typeof AppRouteRouteWithChildren
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
+  '/app/shop/$id': typeof AppShopIdRoute
   '/app/community': typeof AppCommunityIndexRoute
   '/app/home': typeof AppHomeIndexRoute
   '/app/jobs': typeof AppJobsIndexRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/app': typeof AppRouteRouteWithChildren
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
+  '/app/shop/$id': typeof AppShopIdRoute
   '/app/community': typeof AppCommunityIndexRoute
   '/app/home': typeof AppHomeIndexRoute
   '/app/jobs': typeof AppJobsIndexRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/app': typeof AppRouteRouteWithChildren
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/app/community/$id': typeof AppCommunityIdRoute
+  '/app/shop/$id': typeof AppShopIdRoute
   '/app/community/': typeof AppCommunityIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
   '/app/jobs/': typeof AppJobsIndexRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/demo/tanstack-query'
     | '/app/community/$id'
+    | '/app/shop/$id'
     | '/app/community'
     | '/app/home'
     | '/app/jobs'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/demo/tanstack-query'
     | '/app/community/$id'
+    | '/app/shop/$id'
     | '/app/community'
     | '/app/home'
     | '/app/jobs'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/demo/tanstack-query'
     | '/app/community/$id'
+    | '/app/shop/$id'
     | '/app/community/'
     | '/app/home/'
     | '/app/jobs/'
@@ -180,6 +192,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppCommunityIndexRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/app/shop/$id': {
+      id: '/app/shop/$id'
+      path: '/shop/$id'
+      fullPath: '/app/shop/$id'
+      preLoaderRoute: typeof AppShopIdRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
     '/app/community/$id': {
       id: '/app/community/$id'
       path: '/community/$id'
@@ -192,6 +211,7 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteRouteChildren {
   AppCommunityIdRoute: typeof AppCommunityIdRoute
+  AppShopIdRoute: typeof AppShopIdRoute
   AppCommunityIndexRoute: typeof AppCommunityIndexRoute
   AppHomeIndexRoute: typeof AppHomeIndexRoute
   AppJobsIndexRoute: typeof AppJobsIndexRoute
@@ -200,6 +220,7 @@ interface AppRouteRouteChildren {
 
 const AppRouteRouteChildren: AppRouteRouteChildren = {
   AppCommunityIdRoute: AppCommunityIdRoute,
+  AppShopIdRoute: AppShopIdRoute,
   AppCommunityIndexRoute: AppCommunityIndexRoute,
   AppHomeIndexRoute: AppHomeIndexRoute,
   AppJobsIndexRoute: AppJobsIndexRoute,
