@@ -8,6 +8,7 @@ import Loader from '../Loader'
 import { getFullMoney } from '@/utils/numberFormatter'
 
 export const ShopCard = ({ data }: { data: ShopItem }) => {
+  // just check
   const isPending = false
   return (
     <div className="flex flex-col w-full pb-2 rounded-lg min-lg:max-w-[250px] min-lg:nth-of-type-[2n+2]:place-self-end">
