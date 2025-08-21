@@ -1,4 +1,3 @@
-import React from 'react'
 import { posts } from '../../-data/Posts'
 import { Post } from '@/components'
 
